@@ -1,0 +1,24 @@
+{
+  "name": "tester-c",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed --workers=1",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:failed": "playwright test --last-failed --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/node": "^26.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
