@@ -48,7 +48,7 @@ class ProductPOM {
         const count = await button.count()
         for (let i = 0; i < count; i++) {
             await button.nth(i).click()
-            await this.page.waitForTimeout(1000)
+            await this.page.waitForTimeout(1500)
         }
     }
 
@@ -60,7 +60,7 @@ class ProductPOM {
             const PName = await ProductsList.nth(i).textContent()
             if (PName && testData.includes(PName.trim())) {
                 await this.page.locator(productLocators.addtocartButton).nth(i).click()
-                await this.page.waitForTimeout(2000)
+                await this.page.waitForTimeout(1500)
             }
         }
     }
@@ -68,22 +68,22 @@ class ProductPOM {
 
     //    await this.page.locator(productLocators.filterName).click() 
        await this.page.selectOption(productLocators.filterName,"az") 
-       await this.page.waitForTimeout(5000)
+      
     }
      async func_filterByNameZtoA(){
         // await this.page.locator(productLocators.filterName).click() 
        await this.page.selectOption(productLocators.filterName,"za") 
-       await this.page.waitForTimeout(5000)
+      
     }
      async func_filterByPriceLowtoHigh(){
         // await this.page.locator(productLocators.filterName).click() 
        await this.page.selectOption(productLocators.filterName,"lohi") 
-       await this.page.waitForTimeout(5000)
+       
     }
      async func_filterByPriceHightoLow(){
         // await this.page.locator(productLocators.filterName).click() 
        await this.page.selectOption(productLocators.filterName,"hilo") 
-       await this.page.waitForTimeout(5000)
+       
     }
     async func_getProductNames(){
         return await this.page.locator(productLocators.productName).allTextContents()
@@ -94,7 +94,7 @@ class ProductPOM {
     }
     async func_gotoCartPage(){
         await this.page.locator(productLocators.cartlink).click()
-        await this.page.waitForTimeout(5000)
+       
     }
     async func_getfirstProductDetails(){
         const names = await this.page.locator(productLocators.productName).first().textContent()
