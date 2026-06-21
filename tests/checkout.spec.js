@@ -66,7 +66,7 @@ test.describe("cart page validation", () => {
 
         await expect(page).toHaveURL(/checkout-step/)
     })
-    test.only("TC_05 validate Error message on checkout page", async ({ page }) => {
+    test("TC_05 validate Error message on checkout page", async ({ page }) => {
         await checkoutRef.func_fillcheckoutData("", "", "")
         await checkoutRef.func_clickOnCheckoutContinue()
         const errormsg = await checkoutRef.func_getCheckoutErrorMessage()
