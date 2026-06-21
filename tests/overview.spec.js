@@ -55,7 +55,7 @@ test.describe("cart page validation", () => {
         await expect(uiElements.overviewTitle).toContain("Overview")
         await expect(uiElements.priceTotal).toContain("$29.99")
     })
-    test.only("get overview product details",async ({page})=>{
+    test("get overview product details",async ({page})=>{
        const cartProductDetails = await overviewRef.func_getAllProductDetails()
         console.log(cartProductDetails)
     })
