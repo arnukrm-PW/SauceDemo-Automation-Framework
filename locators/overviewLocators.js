@@ -14,5 +14,6 @@ cartProductName:".inventory_item_name",
 cartProductDescription:".inventory_item_desc",
 cartProductPrice:".inventory_item_price"
 
+
 }
 module.exports=overviewLocator

@@ -1,6 +1,6 @@
 const{test,expect} = require("@playwright/test")
-const LoginPage = require('../pages/loginPOM')
-const ProductLocators = require('../pages/productPOM')
+const LoginPage = require('../../pages/loginPOM')
+const ProductLocators = require('../../pages/productPOM')
 
 test("login test",async ({page})=>{
 const loginPage = new LoginPage(page)

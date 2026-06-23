@@ -1,9 +1,9 @@
 const { test, expect } = require('@playwright/test')
-const ProductPOM = require('../pages/productPOM')
-const LoginPOM = require('../pages/loginPOM')
-const loginLocators = require('../locators/loginLocators')
-const productLocator = require('../locators/productLocator')
-const testData = require('../test-data/testData')
+const ProductPOM = require('../../pages/productPOM')
+const LoginPOM = require('../../pages/loginPOM')
+const loginLocators = require('../../locators/loginLocators')
+const productLocator = require('../../locators/productLocator')
+const testData = require('../../test-data/testData')
 
 test.describe("product page validation", () => {
 
