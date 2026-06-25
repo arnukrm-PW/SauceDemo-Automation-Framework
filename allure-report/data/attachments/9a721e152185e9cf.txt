@@ -1,0 +1,10 @@
+{
+  overviewTitle: 'Checkout: Overview',
+  cancelButton: locator('[data-test="cancel"]'),
+  finishButton: 'Finish',
+  paymentInformation: 'SauceCard #31337',
+  shippingInformation: 'Free Pony Express Delivery!',
+  priceTotal: 'Item total: $129.94',
+  taxDetails: 'Tax: $10.40',
+  totalDetails: 'Total: $140.34'
+}

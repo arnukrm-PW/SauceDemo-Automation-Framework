@@ -8,6 +8,11 @@ class ProductPOM {
         this.bookaDemo = page.getByRole("button", { name: "Book a Demo", exact: true })
     }
 
+
+    // async waitForElement(page, locator){
+    //     await page.locator(locator).waitFor({state:'visible'})
+
+    // }
     async prevPage() {
         await this.page.goBack()
     }
