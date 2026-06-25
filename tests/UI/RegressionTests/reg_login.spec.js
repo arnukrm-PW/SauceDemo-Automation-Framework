@@ -2,7 +2,7 @@ const{test,expect} = require('@playwright/test')
 const LoginPage=require('../../../pages/loginPOM')
 const ProductPOM = require('../../../pages/productPOM')
 
-test.describe("Login Verification",()=>{
+test.describe("Login Verification @regression",()=>{
 let loginPageRef ;
 let productPageRef;
 
