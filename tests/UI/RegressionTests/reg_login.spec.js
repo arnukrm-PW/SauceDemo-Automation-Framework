@@ -1,6 +1,8 @@
 const{test,expect} = require('@playwright/test')
 const LoginPage=require('../../../pages/loginPOM')
 const ProductPOM = require('../../../pages/productPOM')
+const loginData = require('../../../test-data/loginData')
+
 
 test.describe("Login Verification @regression",()=>{
 let loginPageRef ;
@@ -58,4 +60,21 @@ test("LGN_007	Logout	Login → click menu → logout	Redirected to login page",a
     await expect(page.locator("#login-button")).toBeVisible()
 
 })
+test.describe("Regression using Data Driven @regression ",()=>{
+
+for (const [key,value] of Object.entries(loginData)){
+
+
+test(`LGN_08 ${value} Data Driven using JSON object file `,async ({page})=>{
+   await expect(page).toHaveURL("https://www.saucedemo.com/")
+    await loginPageRef.func_login(value,process.env.SD_PASSWORD)
+    await expect(page).toHaveURL(/inventory/)
+    await productPageRef.func_logout()
+    await expect(page.locator("#login-button")).toBeVisible()
+
+})
+
+}})
+
+
 })
