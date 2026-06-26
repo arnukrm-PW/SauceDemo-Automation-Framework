@@ -58,7 +58,7 @@ test.describe("cart page validation", () => {
 
       //URL verification
         const uiElements = await checkoutCompleteRef.func_getfinalPageInfo()
-        expect(page).toHaveURL(/checkout-complete/)
+        await expect(page).toHaveURL(/checkout-complete/)
         // UI Elements verificaiton
         console.log(uiElements)
         expect(uiElements.pageInfo).toContain("Complete!")
@@ -73,6 +73,6 @@ const successMessage = await checkoutCompleteRef.func_getSuccessMessageText()
     test("TC_03 BachHome Validation",async({page})=>{
 
         await checkoutCompleteRef.func_goBackHometoProductPage()
-        expect(page).toHaveURL(/inventory/)
+        await expect(page).toHaveURL(/inventory/)
     })
 })
