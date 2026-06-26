@@ -9,7 +9,7 @@ test("TC01 get user details",async ({request})=>{
     expect(response.status()).toBe(200)
 })
 
-test.only("TC 02 getuser details",async ({})=>{
+test("TC 02 getuser details",async ({})=>{
 
  const response = await getUsers01()
  //console.log(response)
