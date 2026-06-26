@@ -34,21 +34,21 @@ test.describe("cart page validation", () => {
         expect(page).toHaveURL("https://www.saucedemo.com/cart.html")
 
         const ui = await cartPageRef.func_getcartPageElements()
-        expect(ui.cartpage).toBeVisible()
-        expect(ui.shoppingcart).toBeVisible()
-        expect(ui.checkout).toBeVisible()
+        await expect(ui.cartpage).toBeVisible()
+        await expect(ui.shoppingcart).toBeVisible()
+        await expect(ui.checkout).toBeVisible()
 
     })
     test("TC_02 validate continue shopping cart", async ({ page }) => {
         await productPageRef.func_addfirstProducttoCart()
         await productPageRef.func_gotoCartPage()
         const ui = await cartPageRef.func_getcartPageElements()
-        expect(ui.cartpage).toBeVisible()
-        expect(ui.shoppingcart).toBeVisible()
-        expect(ui.checkout).toBeVisible()
+        await expect(ui.cartpage).toBeVisible()
+        await expect(ui.shoppingcart).toBeVisible()
+        await expect(ui.checkout).toBeVisible()
 
         await cartPageRef.func_clickOnContinueShopping()
-        expect(page).toHaveURL(/inventory/)
+        await expect(page).toHaveURL(/inventory/)
 
     })
     test("TC_03 validate first product in cart page ", async ({ page }) => {

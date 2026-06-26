@@ -9,7 +9,7 @@ const cartLocators = require('../../../locators/cartLocator')
 const checkoutLocators = require('../../../locators/checkoutLocator')
 const testData = require('../../../test-data/testData')
 const checkoutData = require('../../../test-data/checkoutData')
-const {waitForSelector}=require('../../../utils/dynamicWait')
+const {waitForElement}=require('../../../utils/dynamicWait')
 
 test.describe("cart page validation", () => {
 
@@ -39,8 +39,9 @@ test.describe("cart page validation", () => {
     test("TC_01 checkout fill your information", async ({ page }) => {
 
         await checkoutRef.func_fillcheckoutData(checkoutData.firstName, checkoutData.lastName, checkoutData.postalCode)
+        
+        await waitForElement(page,"#last-name")
         expect(await page.locator(checkoutLocators.firstName)).toHaveValue("arun")
-        //await waitForElement(page,"#last-name")
         expect(await page.locator(checkoutLocators.lastName)).toHaveValue("kumar")
         expect(await page.locator(checkoutLocators.postalCode)).toHaveValue("712202")
 
